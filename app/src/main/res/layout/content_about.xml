@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_about"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.amrit.spotnepal.about"
+    tools:showIn="@layout/activity_about">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="2"
+            android:src="@drawable/launcher" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:text="SpotNepal\nFind best spots around."
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:elevation="16dp"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/amrit" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AmRit GhiMire"
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="125dp"
+                android:layout_height="125dp" android:src="@drawable/jagdish"
+                android:scaleType="centerCrop"
+                android:id="@+id/jagdish"
+                android:layout_alignParentTop="true" android:layout_alignParentLeft="true"
+                />
+            <TextView
+                android:layout_width="wrap_content" android:id="@+id/jagdishname"
+                android:layout_height="wrap_content" android:text="Jagdish Shrestha" android:layout_below="@id/jagdish"/>
+
+
+            <ImageView
+                android:layout_width="125dp"
+                android:layout_height="125dp" android:src="@drawable/bhag"
+                android:scaleType="centerCrop"
+                android:id="@+id/bhagwan"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/bhagwanname"
+                android:layout_height="wrap_content" android:text="Bhagwan Subedi" android:layout_below="@id/bhagwan"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
+                />
+
+
+            <ImageView
+        android:layout_width="125dp"
+        android:layout_height="125dp" android:src="@drawable/bishwo"
+        android:scaleType="centerCrop"
+        android:id="@+id/bishwo"
+                android:layout_below="@+id/jagdishname"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="Bishwo Karki"
+                android:layout_below="@id/bishwo"
+                />
+
+            <ImageView
+        android:layout_width="125dp"
+        android:layout_height="125dp" android:src="@drawable/jasmine"
+        android:scaleType="centerCrop"
+        android:id="@+id/jasmine"
+                android:layout_below="@+id/bhagwanname"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="Jasmine Baral"
+                android:layout_alignParentBottom="true"
+                android:layout_alignRight="@+id/bhagwanname"
+                android:layout_alignEnd="@+id/bhagwanname"
+                android:id="@+id/textView3" />
+
+        </RelativeLayout>
+
+
+</LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/visiticon"
+
+            android:title="Visiting Spot" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/treklogo"
+            android:title="Adventurous Tourism" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/couple"
+            android:title="Dating Spot" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/all"
+            android:title="All" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item android:id="@+id/intro" android:icon="@drawable/info"
+            android:title="Introduction"/>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/about"
+                android:title="About" />
+        </menu>
+    </item>
+
+</menu>

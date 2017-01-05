@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.amrit.spotnepal.descriptionOfPlace"
+    tools:showIn="@layout/activity_description_of_place">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Boating"
+        android:id="@+id/introplace"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000000"
+        android:layout_marginTop="30dp"
+        android:layout_above="@+id/gallery_relative_layout"
+        />
+
+    <RelativeLayout
+        android:id="@+id/gallery_relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="200dip"
+
+        android:orientation="horizontal"
+        android:layout_below="@+id/introplace">
+        <android.support.v4.view.ViewPager
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:id="@+id/gallery">
+
+        </android.support.v4.view.ViewPager>
+<!--
+        <HorizontalScrollView
+            android:id="@+id/hor_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <LinearLayout
+                android:id="@+id/gallery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+                <ImageView
+                    android:id="@+id/image1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/begnas"
+                    android:layout_marginLeft="0dp"
+                    android:layout_gravity="top|left" />
+                <ImageView
+                    android:id="@+id/image2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/lake101"
+                    android:layout_gravity="top|left" />
+                <ImageView
+                    android:id="@+id/image3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/bungg2"
+/>
+            </LinearLayout>
+        </HorizontalScrollView>
+        -->
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gallery_relative_layout">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/gallery_relative_layout"
+            android:layout_marginTop="10dp"
+            android:scrollbars="vertical" android:id="@+id/descriptionOfPlaceInDesc"
+            android:text=" These range from the glacier-fed lakes up North and down to where the laden rivers ease into the plains of the Terai. Pokhara's Phewa Lake is the most popular destination for travelers wanting to indulge in recreational boating. It is the second largest lake in the kingdom and measures roughly 1.5 by 4 km. Its eastern shore, also known as Lakeside or Baidam, is the center of tourist activity in Pokhara.
+
+
+Begnas and Rupa Tal are located 15 km out of Pokhara at the end of a road that turns off the Kathmandu highway. Both these lakes offer some splendid boating opportunities. Phewa, Begnas and Rupa Lakes were all part of the body of water that once filled the Pokhara valley.
+
+
+Renting a boat for a couple of hours and heading out to the middle or the other side of the lake bordering the forested hill, and taking a swim, can be the highlight of a warm day. The water is cleaner out far from the buffalo and washing on the edge. Boats can also be had for the whole day, or on an hourly basis. You can either row around yourself or hire a boatman, the former being definitely a better option.
+
+
+At Phewa, tourists have a choice of pedal-driven boats (which are basically fashioned out of two regular rowboats joined together by placing planks over them and providing space in the middle where the pedals are located), rowboats and sailboats. The latter are a recent development but definitely worth the money when there is a good breeze around. There is also a choice between fiber body sailboats and wooden ones."/>
+    </ScrollView>
+
+
+</RelativeLayout>

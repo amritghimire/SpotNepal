@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.amrit.spotnepal.MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" android:id="@+id/scrollView" >
+    <LinearLayout
+        android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/location_not_retrieved_yet"
+        android:id="@+id/tLocation"
+        android:gravity="top|end"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <ImageButton
+                android:layout_width="0dp" android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:background="@null"
+                android:src="@drawable/explore"
+                android:id="@+id/explore"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="Explore"
+                android:layout_marginRight="16dp" />
+
+            <ImageButton android:src="@drawable/collection"
+                android:layout_width="0dp" android:layout_weight="1"
+                android:layout_height="wrap_content" android:scaleType="centerCrop"
+                android:background="@null"
+                android:id="@+id/collection"
+                android:padding="0dp"
+                />
+        </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tPlace"
+        android:text="Lakeside"
+        android:gravity="center"
+        android:textStyle="italic|bold"/>
+     <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+         android:layout_weight="1"
+        android:id="@+id/iplace"
+         android:scaleType="centerCrop"
+        android:src="@drawable/lake101"
+         android:padding="0dp"
+         android:clickable="true" android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:id="@+id/tPlaceDecription"
+            android:text="A place you don't want to miss."
+            android:gravity="center"
+            android:textStyle="italic|bold"/>
+
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageButton android:src="@drawable/ic_menu_back"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:onClick="prev" />
+            <ImageButton
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:layout_width="0dp"
+                android:layout_weight="1" android:id="@+id/visited"
+                android:src="@drawable/visited" android:layout_marginEnd="15dp" android:layout_marginRight="15dp"/>
+            <ImageButton android:src="@drawable/bookmark"
+                android:layout_height="wrap_content" android:id="@+id/bookmark"
+                android:background="@null"
+                android:layout_width="0dp"
+                android:layout_weight="1" android:layout_marginEnd="15dp" android:layout_marginRight="15dp" />
+            <ImageButton
+                android:background="@null"
+                android:layout_height="wrap_content" android:src="@drawable/share"
+                android:layout_width="0dp"
+                android:layout_weight="1" android:id="@+id/share" android:layout_marginEnd="15dp" android:layout_marginRight="15dp"/>
+            <ImageButton android:src="@drawable/ic_menu_forward"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:layout_height="wrap_content"
+                android:onClick="forward" />
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/plans" android:gravity="center" android:textStyle="italic|bold" android:text="Bookmarks :" />
+
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:id="@+id/listView"
+/>
+
+
+    </LinearLayout>
+</ScrollView>
+
+
+
+</RelativeLayout>

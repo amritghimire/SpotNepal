@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">SpotNepal</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Manage Visited</string>
+    <string name="no_geocoder_available">No geocoder available</string>
+    <string name="foundlocation">We found you on map but not address.</string>
+    <string name="turnonlocation">Please turn on Location</string>
+    <string name="title_activity_settings">Manage Visited</string>
+    <string name="location_not_retrieved_yet">Location not retrieved yet</string>
+    <string name="title_activity_description_of_place">Description Of Place</string>
+    <string name="title_activity_explore">Explore</string>
+    <string name="title_activity_collection">Collection</string>
+    <string name="title_activity_about">About</string>
+
+
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title">SpotNepal</string>
+    <string name="slide_1_desc">The easiest way to find out the best spots nearby!</string>
+
+    <string name="slide_2_title">Dating Spots</string>
+    <string name="slide_2_desc">Find best spots nearby to hang out.</string>
+
+    <string name="slide_3_title">Adventures</string>
+    <string name="slide_3_desc">Best spots to test your courage!</string>
+
+    <string name="slide_4_title">Visiting Spots</string>
+    <string name="slide_4_desc">Find places to visit with friends and family.</string>
+
+    <string name="play_again_desc">To see the welcome slider again, goto Naviggation Bar -> information</string>
+    <string name="play_again">Play Again</string>
+
+
+</resources>
