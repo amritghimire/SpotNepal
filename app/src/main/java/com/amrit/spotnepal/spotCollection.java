@@ -36,7 +36,7 @@ public class spotCollection {
                         "4>One sold tickets not accepted return back.\n" +
                         "5>Fewa lake conservation fee RS 10.\n",new int[]{R.drawable.boating,R.drawable.lake,R.drawable.boat2}),
 
-                new spot(R.drawable.bungg2, "Bungy Jumping", "Water Touch Bungy an adventure tourism in Pokhara", 28.2600000,83.9600000,"ADVETURE TOURSIM","\n" +
+                new spot(R.drawable.bungg2, "Bungy Jumping", "Water Touch Bungy an adventure tourism in Pokhara", 28.2600000,83.9600000,"ADVENTURE TOURISM","\n" +
                         "\n" +
                         "Location: Hemja, Near Tibetan Camp, Pokhara.\n" +
                         "Hight: 80 meters / 50m & 32m Cliff Steel Tower\n" +
