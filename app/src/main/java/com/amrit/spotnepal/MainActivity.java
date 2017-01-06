@@ -5,12 +5,15 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
@@ -40,6 +43,9 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -114,14 +120,40 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 Intent share = new Intent(Intent.ACTION_SEND);
-                Uri uri = Uri.parse("android.resource://com.amrit.spotnepal/" + R.drawable.screen);
-                // If you want to share a png image only, you can do:
-                // setType("image/png"); OR for jpeg: setType("image/jpeg");
-                share.setType("image/jpg");
-                share.putExtra(Intent.EXTRA_STREAM, uri);
-                share.putExtra(Intent.EXTRA_TEXT, "Testing Upload");
 
-                startActivity(Intent.createChooser(share, "Share Image!"));
+
+                Bitmap bitmap = BitmapFactory.decodeResource(getResources(), sptC.getCurrent());
+
+                ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, bytes);
+                File folder = new File(Environment.getExternalStorageDirectory() + File.separator + "spotnepal");
+                boolean success = true;
+                if (!folder.exists()) {
+                    success = folder.mkdir();
+                }
+                if (success) {
+                    File f = new File(Environment.getExternalStorageDirectory() + File.separator + "spotnepal"
+                            + File.separator + getResources().getResourceEntryName(sptC.getCurrent()) + ".png");
+                    if (!f.exists()) {
+                        try {
+                            Toast.makeText(MainActivity.this, "Copying file to your storage", Toast.LENGTH_LONG).show();
+                            f.createNewFile();
+                            FileOutputStream fo = new FileOutputStream(f);
+                            fo.write(bytes.toByteArray());
+                            fo.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+
+                    Uri uri = Uri.fromFile(f);
+                    share.setType("image/jpg");
+                    share.putExtra(Intent.EXTRA_STREAM, uri);
+                    share.putExtra(Intent.EXTRA_TEXT, "Shared from SPOTNEPAL");
+
+                    startActivity(Intent.createChooser(share, "Share Image!"));
+                }
             }
         });
         ImageButton imageView = (ImageButton) findViewById(R.id.iplace);
@@ -351,13 +383,40 @@ public class MainActivity extends AppCompatActivity
             startActivity(i);
         } else if (id == R.id.nav_share) {
             Intent share = new Intent(Intent.ACTION_SEND);
-            Uri uri = Uri.parse("android.resource://com.amrit.spotnepal/" + R.drawable.screen);
-            share.setType("image/jpg");
-            share.putExtra(Intent.EXTRA_STREAM, uri);
-            share.putExtra(Intent.EXTRA_TEXT, "Testing Upload");
 
-            startActivity(Intent.createChooser(share, "Share Image!"));
 
+            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), sptC.getCurrent());
+
+            ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, bytes);
+            File folder = new File(Environment.getExternalStorageDirectory() + File.separator + "spotnepal");
+            boolean success = true;
+            if (!folder.exists()) {
+                success = folder.mkdir();
+            }
+            if (success) {
+                File f = new File(Environment.getExternalStorageDirectory() + File.separator + "spotnepal"
+                        + File.separator + getResources().getResourceEntryName(sptC.getCurrent()) + ".png");
+                if (!f.exists()) {
+                    try {
+                        Toast.makeText(MainActivity.this, "Copying file to your storage", Toast.LENGTH_LONG).show();
+                        f.createNewFile();
+                        FileOutputStream fo = new FileOutputStream(f);
+                        fo.write(bytes.toByteArray());
+                        fo.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+
+                Uri uri = Uri.fromFile(f);
+                share.setType("image/jpg");
+                share.putExtra(Intent.EXTRA_STREAM, uri);
+                share.putExtra(Intent.EXTRA_TEXT, "Shared from SPOTNEPAL");
+
+                startActivity(Intent.createChooser(share, "Share Image!"));
+            }
         } else if (id == R.id.nav_send) {
             Intent intent=new Intent(this,about.class);
             startActivity(intent);
