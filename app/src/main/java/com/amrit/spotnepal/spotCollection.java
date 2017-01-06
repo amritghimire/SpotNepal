@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
 
+
 /**
  * Created by amrit on 6/23/16.
  */
@@ -373,6 +374,7 @@ public class spotCollection {
         }
         return at;
     }
+
 
     public Activity getActivity() {
         return activity;

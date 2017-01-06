@@ -29,6 +29,8 @@ public class descriptionOfPlace extends AppCompatActivity {
 
         String description=getIntent().getStringExtra("description");
         setContentView(R.layout.activity_description_of_place);
+        ViewPager viewPager=(ViewPager) findViewById(R.id.gallery);
+
         if(name!=null) {
             ((TextView) findViewById(R.id.introplace)).setText(name);
             ((TextView)findViewById(R.id.descriptionOfPlaceInDesc)).setText(description);
@@ -37,11 +39,9 @@ public class descriptionOfPlace extends AppCompatActivity {
                 this.finish();
                 super.onBackPressed();
             }else if(spt.drawables!=null){
-                ViewPager viewPager=(ViewPager) findViewById(R.id.gallery);
                 AndroidImageAdapter androidImageAdapter=new AndroidImageAdapter(this,spt.drawables);
                 viewPager.setAdapter(androidImageAdapter);
             }else {
-                ViewPager viewPager=(ViewPager) findViewById(R.id.gallery);
                 AndroidImageAdapter androidImageAdapter=new AndroidImageAdapter(this,new int[]{R.drawable.begnas,R.drawable.screen,R.drawable.screenn});
                 viewPager.setAdapter(androidImageAdapter);
 

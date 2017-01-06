@@ -362,7 +362,9 @@ public class MainActivity extends AppCompatActivity
             Intent intent=new Intent(this,about.class);
             startActivity(intent);
         }else if(id==R.id.intro){
-            startActivity(new Intent(this,WelcomeActivity.class));
+            Intent wc=new Intent(this,WelcomeActivity.class);
+            wc.putExtra("from","home");
+            startActivity(wc);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -4,10 +4,12 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,10 +32,20 @@ public class WelcomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // Checking for first time launch - before calling setContentView()
+        Intent intent=getIntent();
         prefManager = new PrefManager(this);
-        prefManager.setFirstTimeLaunch(false);
+
+        String data=intent.getStringExtra("from");
+        if(data==null){
+            if (!prefManager.isFirstTimeLaunch()) {
+                launchHomeScreen();
+                finish();
+            }
+        }else{
+        }
+        // Checking for first time launch - before calling setContentView()
+
+
         // Making notification bar transparent
         if (Build.VERSION.SDK_INT >= 21) {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
