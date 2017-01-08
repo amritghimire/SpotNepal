@@ -111,9 +111,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view) {
                 MyUtility.addVisited(sptC.getActivity(), sptC.getCurrentName());
                 sptC.getListOfspot()[sptC.getInteger(sptC.getCurrentName())].setVisited(true);
+                Toast.makeText(sptC.getContext(), sptC.getCurrentName() + "marked as visited.", Toast.LENGTH_LONG).show();
+
                 int nxt = sptC.next(sptC.getCurrent());
                 setImage(nxt);
-                Toast.makeText(sptC.getContext(), sptC.getCurrentName() + "marked as visited.", Toast.LENGTH_LONG).show();
             }
         });
         findViewById(R.id.share).setOnClickListener(new View.OnClickListener() {
