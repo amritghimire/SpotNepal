@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.StringTokenizer;
 
 public class SettingsActivity extends AppCompatActivity {
     private String[] visited;
@@ -47,6 +48,10 @@ public class SettingsActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent=new Intent(SettingsActivity.this,descriptionOfPlace.class);
                 intent.putExtra("name",visited[i]);
+                String longDescription;
+                longDescription=MainActivity.sptC.getSpot(visited[i]).longDescription;
+                intent.putExtra("description",longDescription);
+
                 startActivity(intent);
             }
         });
