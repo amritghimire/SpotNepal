@@ -33,7 +33,7 @@
                 <Button
 
                     android:text="EXPLORE"
-                    android:textColor="#757575"
+                    android:textColor="@android:color/white"
                     android:textSize="15sp"
                     android:textStyle="bold"
                     android:id="@+id/explore"
@@ -45,7 +45,7 @@
 
                 <Button
                     android:text="COLLECTION"
-                    android:textColor="#757575"
+                    android:textColor="@android:color/white"
                     android:textSize="15sp"
                     android:textStyle="bold"
                     android:id="@+id/collection"

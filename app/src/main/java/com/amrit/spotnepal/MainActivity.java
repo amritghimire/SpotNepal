@@ -46,6 +46,8 @@ import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -300,7 +302,11 @@ public class MainActivity extends AppCompatActivity
 // Setting this scroll listener is required to ensure that during ListView scrolling,
 // we don't look for swipes.
         listView.setOnScrollListener(touchListener.makeScrollListener());
+        // Write a message to the database
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("message");
 
+        myRef.setValue("Hello, World!");
 
     }
 
