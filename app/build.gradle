@@ -39,4 +39,7 @@ dependencies {
     compile 'com.android.support:design:24.0.0'
     compile 'com.google.android.gms:play-services-location:9.0.2'
     compile 'com.google.android.gms:play-services-appindexing:9.0.2'
+    compile 'com.google.firebase:firebase-database:9.0.2'
 }
+
+apply plugin: 'com.google.gms.google-services'
