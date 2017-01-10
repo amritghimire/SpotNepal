@@ -67,7 +67,7 @@ public class descriptionOfPlace extends AppCompatActivity {
             } else {
                 AndroidImageAdapter androidImageAdapter = new AndroidImageAdapter(this, new int[]{R.drawable.begnas, R.drawable.screen, R.drawable.screenn});
                 viewPager.setAdapter(androidImageAdapter);
- 
+
             }
         } else
             ((TextView) findViewById(R.id.introplace)).setText("iugkfbj vfggghkbfj \n v,msdy\tofcihkn, xysoiulhkj,cn \n" +

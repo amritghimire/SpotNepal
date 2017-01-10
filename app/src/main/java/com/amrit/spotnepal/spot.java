@@ -6,16 +6,19 @@ import android.location.Location;
  * Created by amrit on 6/20/16.
  */
 public class spot {
-    int id;
+    public int id;
     static int count=0;
     public int drawable;
-    int[] drawables;
-    String name,shortDescription,longDescription;
-    double latitude,longitude;
-    double tempData;
-    private boolean visited;
-    private boolean planned;
+    public int[] drawables;
+    public String name,shortDescription,longDescription;
+    public double latitude,longitude;
+    public double tempData;
+    public boolean visited;
+    public boolean planned;
     public String category;
+
+
+
 
     public spot(int drawable,String name,String shortDescription,double latitude,double longitude,String category,String longDescription,int[] drawables) {
         this.drawable=drawable;

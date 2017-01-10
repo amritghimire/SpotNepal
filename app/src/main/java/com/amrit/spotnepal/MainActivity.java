@@ -8,6 +8,8 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -136,8 +138,7 @@ public class MainActivity extends AppCompatActivity
                 Intent share = new Intent(Intent.ACTION_SEND);
 
 
-                Bitmap bitmap = BitmapFactory.decodeResource(getResources(), sptC.getCurrent());
-
+               Bitmap bitmap = BitmapFactory.decodeResource(getResources(), sptC.getCurrent());
                 ByteArrayOutputStream bytes = new ByteArrayOutputStream();
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, bytes);
                 File folder = new File(Environment.getExternalStorageDirectory() + File.separator + "spotnepal");
@@ -303,11 +304,40 @@ public class MainActivity extends AppCompatActivity
 // we don't look for swipes.
         listView.setOnScrollListener(touchListener.makeScrollListener());
         // Write a message to the database
+/*
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("message");
+        try {
+            database.setPersistenceEnabled(true);
+        }catch (com.google.firebase.database.DatabaseException e){
+            //do nothing
+        }
 
-        myRef.setValue("Hello, World!");
+        DatabaseReference myRef = database.getReference("spots");
+        List spotslist=new ArrayList<Spots>();
+       // myRef.setValue(spotslist);
+        for(spot s:sptC.getListOfspot()){
+            //String userId = myRef.push().getKey();
+            //myRef.child(userId).setValue(spotss);
+            String drawables="";
+            int st=0;
+            for(int rs:s.drawables){
+                if(st==0) {
+                    drawables += "~"+getResources().getResourceEntryName(rs);
+                    st=1;
+                }else{
+                    drawables += ",~"+getResources().getResourceEntryName(rs);
+                }
+            }
+            Spots spotss=new Spots("Pokhara",s.category, "~"+getResources().getResourceEntryName(s.drawable),s.id,s.latitude,s.longDescription,s.longitude,s.name,s.isPlanned(),s.shortDescription,s.tempData,s.getVisited(),drawables);
 
+
+
+            spotslist.add(spotss);
+        }
+        myRef.setValue(spotslist);
+        int counts=spotslist.size();
+        database.getReference("count").setValue(counts);
+*/
     }
 
 
@@ -578,7 +608,7 @@ public class MainActivity extends AppCompatActivity
                     }
                     result = outputAddress;//address.getAddressLine(0) + ", " + address.getLocality();
                 }
-            } catch (IOException e) {
+            } catch (IOException ignored) {
 
             }finally {
                 if (result != null) {
@@ -593,15 +623,14 @@ public class MainActivity extends AppCompatActivity
                     });
                 }
                     spot[] listt = sptC.getListOfspot();
-                    spot[] lll = listt;
                     spot first = listt[0];
                     int least = -1;
                     float[] results = new float[]{(float) 0.000};
                     if (locationAccessed == 1) {
-                        for (int i = 0; i < listt.length; i++) {
-                            Location.distanceBetween(mLastLocation.getLatitude(), mLastLocation.getLongitude(), listt[i].latitude, listt[i].longitude, results);
+                        for (spot aListt : listt) {
+                            Location.distanceBetween(mLastLocation.getLatitude(), mLastLocation.getLongitude(), aListt.latitude, aListt.longitude, results);
                             float metres = results[0];
-                            listt[i].tempData = metres;
+                            aListt.tempData = metres;
                             if ((least > metres) || least == -1) {
                                 least = (int) metres;
                             }
@@ -661,10 +690,9 @@ public class MainActivity extends AppCompatActivity
             editor.apply();
             Toast.makeText(this, "Added first Bookmark : " + bookmark, Toast.LENGTH_LONG).show();
             recreate();
-            return;
         } else {
             Log.d("AMRIT","Bookmark: "+all.indexOf(bookmark));
-            if (all.indexOf(bookmark) < 0) {
+            if (!all.contains(bookmark)) {
                 all = all + "," + bookmark;
                 editor.putString("favorites", all);
                 editor.commit();
