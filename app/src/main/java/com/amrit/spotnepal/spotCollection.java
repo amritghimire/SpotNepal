@@ -256,7 +256,7 @@ public class spotCollection {
                         "Rupa Lake is separated by the Pachabhaiya ridge from Begnas Tal, hence, these two lakes are often called the twin lakes. Rupa Lake is situated at an altitude of about 600m and covers an area of 1.12 sq km running along from north to south. The average depth of the lake is 3.0m and maximum water depth is 4.79m. Its water holding capacity is 3.1 million cubic meter.\n",new int[]{R.drawable.rupa,R.drawable.rupalake})
 
         };
-        
+
         this.context=ctx;
         this.activity=activity;
         current=0;

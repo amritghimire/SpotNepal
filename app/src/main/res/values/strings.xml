@@ -35,6 +35,18 @@
 
     <string name="play_again_desc">To see the welcome slider again, goto Naviggation Bar -> information</string>
     <string name="play_again">Play Again</string>
+    <string name="amrit_ghimire">AmRit GhiMire</string>
+    <string name="jagdish_shrestha">Jagdish Shrestha</string>
+    <string name="bhagwan_subedi">Bhagwan Subedi</string>
+    <string name="bishwo_karki">Bishwo Karki</string>
+    <string name="jasmine_baral">Jasmine Baral</string>
+    <string name="previous">previous</string>
+    <string name="a_place_you_don_t_want_to_miss_kbkjbnmgyhjbnmyguhjbnghjbn">A place you don\'t want to miss.kbkjbnmgyhjbnmyguhjbnghjbn</string>
+    <string name="visited">visited</string>
+    <string name="bookmark">bookmark</string>
+    <string name="share">share</string>
+    <string name="image_of_place">image of place</string>
+    <string name="this_is_the_mos_kjafgnkjafgjkaf_janflkvna_fdjvba_jfbajfbajbvakj">this is the mos kjafgnkjafgjkaf;janflkvna;fdjvba;jfbajfbajbvakj</string>
 
 
 </resources>

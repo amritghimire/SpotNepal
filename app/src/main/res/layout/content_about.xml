@@ -27,6 +27,7 @@
             android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_weight="2"
+            android:contentDescription="@string/app_name"
             android:src="@drawable/launcher" />
 
         <TextView
@@ -50,13 +51,14 @@
             android:layout_width="125dp"
             android:layout_height="125dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/amrit" />
+            android:src="@drawable/amrit"
+            android:contentDescription="@string/amrit_ghimire"/>
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="AmRit GhiMire"
+            android:text="@string/amrit_ghimire"
             android:textAlignment="center"
             android:textAppearance="?android:attr/textAppearanceMedium" />
     </LinearLayout>
@@ -69,11 +71,12 @@
                 android:layout_height="125dp" android:src="@drawable/jagdish"
                 android:scaleType="centerCrop"
                 android:id="@+id/jagdish"
+                android:contentDescription="@string/jagdish_shrestha"
                 android:layout_alignParentTop="true" android:layout_alignParentLeft="true"
                 />
             <TextView
                 android:layout_width="wrap_content" android:id="@+id/jagdishname"
-                android:layout_height="wrap_content" android:text="Jagdish Shrestha" android:layout_below="@id/jagdish"/>
+                android:layout_height="wrap_content" android:text="@string/jagdish_shrestha" android:layout_below="@id/jagdish"/>
 
 
             <ImageView
@@ -85,12 +88,13 @@
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginRight="16dp"
-                android:layout_marginEnd="16dp" />
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@string/bhagwan_subedi"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:id="@+id/bhagwanname"
-                android:layout_height="wrap_content" android:text="Bhagwan Subedi" android:layout_below="@id/bhagwan"
+                android:layout_height="wrap_content" android:text="@string/bhagwan_subedi" android:layout_below="@id/bhagwan"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginRight="16dp"
@@ -103,12 +107,13 @@
         android:layout_height="125dp" android:src="@drawable/bishwo"
         android:scaleType="centerCrop"
         android:id="@+id/bishwo"
+                android:contentDescription="@string/bishwo_karki"
                 android:layout_below="@+id/jagdishname"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true" />
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:text="Bishwo Karki"
+                android:layout_height="wrap_content" android:text="@string/bishwo_karki"
                 android:layout_below="@id/bishwo"
                 />
 
@@ -120,11 +125,12 @@
                 android:layout_below="@+id/bhagwanname"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginRight="16dp"/>
+                android:layout_marginRight="16dp"
+                android:contentDescription="@string/jasmine_baral"/>
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:text="Jasmine Baral"
+                android:layout_height="wrap_content" android:text="@string/jasmine_baral"
                 android:layout_alignParentBottom="true"
                 android:layout_alignRight="@+id/bhagwanname"
                 android:layout_alignEnd="@+id/bhagwanname"
