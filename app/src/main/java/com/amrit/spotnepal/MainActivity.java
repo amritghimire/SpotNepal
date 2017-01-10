@@ -33,6 +33,7 @@ import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
@@ -177,7 +178,7 @@ public class MainActivity extends AppCompatActivity
                 startActivity(i);
             }
         });
-        ((ImageButton) findViewById(R.id.explore)).setOnClickListener(new View.OnClickListener() {
+        ((Button) findViewById(R.id.explore)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(MainActivity.this,Explore.class);
@@ -185,7 +186,7 @@ public class MainActivity extends AppCompatActivity
                 startActivity(intent);
             }
         });
-        ((ImageButton)findViewById(R.id.collection)).setOnClickListener(new View.OnClickListener() {
+        ((Button)findViewById(R.id.collection)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(MainActivity.sptC.getContext(),Collection.class);
@@ -638,6 +639,7 @@ public class MainActivity extends AppCompatActivity
         prev=sptC.prev(sptC.getCurrent());
         if(prev<0) setImage(0);
         else setImage(prev);
+
     }
     public void bookmark() {
         if (sptC.getCurrent() == 0) return;
