@@ -54,14 +54,19 @@ public class AndroidImageAdapter extends PagerAdapter {
 
                 ByteArrayOutputStream bytes = new ByteArrayOutputStream();
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, bytes);
-                File folder=new File(Environment.getExternalStorageDirectory()+File.separator+"spotnepal");
+                File fldr = new File(Environment.getExternalStorageDirectory() + File.separator + "spotnepal");
                 boolean success = true;
-                if (!folder.exists()) {
-                    success = folder.mkdir();
+                if (!fldr.exists()) {
+                    success = fldr.mkdir();
                 }
+                File folderr = new File(Environment.getExternalStorageDirectory() + File.separator + "spotnepal"+File.separator+"images");
+                if (!fldr.exists()) {
+                    success = fldr.mkdir();
+                }
+
                 if (success) {
-                    File f = new File(Environment.getExternalStorageDirectory()+File.separator+"spotnepal"
-                            + File.separator + context.getResources().getResourceEntryName(drawables[position])+".png");
+                    File f = new File(Environment.getExternalStorageDirectory() + File.separator + "spotnepal"+File.separator+"images"
+                            + File.separator + context.getResources().getResourceEntryName(drawables[position]) + ".png");
                     if(!f.exists()) {
                         try {
                             Toast.makeText(context, "Copying file to your storage", Toast.LENGTH_LONG).show();

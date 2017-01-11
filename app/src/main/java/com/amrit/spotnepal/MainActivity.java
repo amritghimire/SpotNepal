@@ -54,6 +54,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -85,6 +86,35 @@ public class MainActivity extends AppCompatActivity
 
         setContentView(R.layout.activity_main);
         sptC = new spotCollection(this, this);
+        boolean success = true;
+        File folderr = new File(Environment.getExternalStorageDirectory() + File.separator + "spotnepal"+File.separator+"images");
+        if (!folderr.exists()) {
+            success = folderr.mkdirs();
+        }
+
+        if(success) {
+            try {
+                File gpxfile = new File(Environment.getExternalStorageDirectory() + File.separator + "spotnepal" + File.separator + "cities");
+                if(!gpxfile.exists()) {
+                    FileWriter writer = new FileWriter(gpxfile);
+                    writer.append("pokhara");
+                    writer.flush();
+                    writer.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }try {
+                File gpxfile = new File(Environment.getExternalStorageDirectory() + File.separator + "spotnepal" + File.separator + "drawables");
+                if(!gpxfile.exists()) {
+                    FileWriter writer = new FileWriter(gpxfile);
+                    writer.append("");
+                    writer.flush();
+                    writer.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -141,13 +171,18 @@ public class MainActivity extends AppCompatActivity
                Bitmap bitmap = BitmapFactory.decodeResource(getResources(), sptC.getCurrent());
                 ByteArrayOutputStream bytes = new ByteArrayOutputStream();
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, bytes);
-                File folder = new File(Environment.getExternalStorageDirectory() + File.separator + "spotnepal");
+                File fldr = new File(Environment.getExternalStorageDirectory() + File.separator + "spotnepal");
                 boolean success = true;
-                if (!folder.exists()) {
-                    success = folder.mkdir();
+                if (!fldr.exists()) {
+                    success = fldr.mkdir();
                 }
+                File folderr = new File(Environment.getExternalStorageDirectory() + File.separator + "spotnepal"+File.separator+"images");
+                if (!fldr.exists()) {
+                    success = fldr.mkdir();
+                }
+
                 if (success) {
-                    File f = new File(Environment.getExternalStorageDirectory() + File.separator + "spotnepal"
+                    File f = new File(Environment.getExternalStorageDirectory() + File.separator + "spotnepal"+File.separator+"image"
                             + File.separator + getResources().getResourceEntryName(sptC.getCurrent()) + ".png");
                     if (!f.exists()) {
                         try {
@@ -438,6 +473,8 @@ public class MainActivity extends AppCompatActivity
             Intent i=new Intent(this,SettingsActivity.class);
             startActivity(i);
             return true;
+        }else if (id==R.id.activity_update_data){
+            startActivity(new Intent(this,updateData.class));
         }
 
         return super.onOptionsItemSelected(item);
@@ -474,13 +511,18 @@ public class MainActivity extends AppCompatActivity
 
             ByteArrayOutputStream bytes = new ByteArrayOutputStream();
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, bytes);
-            File folder = new File(Environment.getExternalStorageDirectory() + File.separator + "spotnepal");
+            File fldr = new File(Environment.getExternalStorageDirectory() + File.separator + "spotnepal");
             boolean success = true;
-            if (!folder.exists()) {
-                success = folder.mkdir();
+            if (!fldr.exists()) {
+                success = fldr.mkdir();
             }
+            File folderr = new File(Environment.getExternalStorageDirectory() + File.separator + "spotnepal"+File.separator+"images");
+            if (!fldr.exists()) {
+                success = fldr.mkdir();
+            }
+
             if (success) {
-                File f = new File(Environment.getExternalStorageDirectory() + File.separator + "spotnepal"
+                File f = new File(Environment.getExternalStorageDirectory() + File.separator + "spotnepal"+File.separator+"image"
                         + File.separator + getResources().getResourceEntryName(sptC.getCurrent()) + ".png");
                 if (!f.exists()) {
                     try {
